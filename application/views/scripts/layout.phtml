@@ -1,0 +1,16 @@
+<?php if(Zend_Controller_Action_HelperBroker::getStaticHelper('FlashMessenger')->hasMessages()){
+	$array=array();
+	foreach(Zend_Controller_Action_HelperBroker::getStaticHelper('FlashMessenger')->getMessages() AS $messages){
+		foreach($messages AS $type=>$message){
+			if(!isset($array[$type]))
+				$array[$type]=array();
+			$array[$type][]=$message;
+		}
+	}
+	foreach($array AS $index=>$rows){
+		echo '<div class="alert alert-dismissable alert-'.$index.'"><button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>';
+		foreach($rows AS $row)
+			echo '<div>'.$this->translate($row).'</div>';
+		echo '</div>';
+	}
+}

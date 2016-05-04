@@ -15,7 +15,7 @@ class IndexController extends Zend_Controller_Action
     
     public function addAction()
     {
-        $form = new User_Form_Add;
+        $form = new Application_Form_UserAdd();
         if ($this->getRequest()->isPost() and $form->isValid($_POST)) {
             Ap_Db_Core::getTable('User')->add($form->getObject());
             $this->_helper->getHelper('FlashMessenger')
