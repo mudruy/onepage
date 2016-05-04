@@ -1,5 +1,14 @@
+<header id="heading">
+    <div class="container text-center">
+        <h1>User list</h1>
+    </div>
+</header>
+
+<?php echo $this->render('flashmessenger.phtml');?>
+
 <div class="row">
     <?php foreach ($this->users AS $user): ?>
         <?php echo $user->login; ?> <br />
     <?php endforeach; ?>
 </div><!-- @end .row -->
+<a href="<?php echo $this->url(array('action'=>'add'), 'add_user', true)?>" >Add</a>

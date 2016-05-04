@@ -1,55 +1,9 @@
-<!doctype html>
-<html lang="en-US">
-<head>
-  <title>Bootstrap Page Layout - Sample Demo</title>
-  <link rel="shortcut icon" href="http://teamtreehouse.com/assets/favicon.ico">
-  <link rel="icon" href="http://teamtreehouse.com/assets/favicon.ico">
-  
-  <base href="<?php echo $this->baseUrl();?>/"/>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <?php echo $this->headTitle('Sample')
-        ->enableTranslation(true)
-        ->setSeparator(' - ');?>
-    <?php echo $this->headMeta()."\n";?>
-    <?php echo $this->headLink()
-        ->appendStylesheet('/css/bootstrap.min.css')
-    ?>
-    <?php echo $this->headScript()
-        ->prependFile('/js/bootstrap.js')
-        ->prependFile('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-    
-    ?>
-</head>
-
-<body>
-    <nav id="navigation">
-      <div class="container">
-      </div>
-    </nav>
-    
-    <header id="heading">
-      <div class="container text-center">
-        <h1>User list</h1>
-      </div>
-    </header>
-    
-    <div id="main-content">
-      <div class="container">
-         <div class="row">
-             <?php foreach($this->users AS $user): ?>
-                <?php echo $user->login; ?> <br />
-             <?php endforeach; ?>
-        </div><!-- @end .row -->
-        
-        <hr>
-    
-    <div id="footer">
-      <div class="container">
-        <p>Simple layout design for <a href="http://blog.teamtreehouse.com/">Treehouse Blog</a>.</p>
-        <p>Feel free to download and use these codes for any basic template layout.</p>
-        <p><small>Website code structured with <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>. Background image credits to <a href="http://www.flickr.com/photos/fjolnir/2342246699/">Fjölnir Ásgeirsson</a>. Sample content via <a href="http://bluthipsum.com/">Bluth Ipsum</a>.</small></p>
-      </div>
+<header id="heading">
+    <div class="container text-center">
+        <h1>User add</h1>
     </div>
-</body>
-</html>
+</header>
+
+<div class="row">
+    <?php echo $this->form ?>
+</div><!-- @end .row -->

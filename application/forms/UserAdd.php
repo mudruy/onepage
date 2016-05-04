@@ -18,11 +18,13 @@ class Application_Form_UserAdd extends Zend_Form {
     public function init() {
 
         $this->addElement('text', 'name');
-        $this->login->setRequired(true)
+        $this->name->setRequired(true)
                 ->addValidator('NotEmpty', true)
                 ->addValidator(new Zend_Validate_StringLength(array('max' => 255)))
                 ->getValidator('NotEmpty')
                 ->setMessage('User_Auth::Name is empty', 'isEmpty');
+
+
 
 
         $email_validator = new Zend_Validate_Db_NoRecordExists($this->getObject()->getTable()->info('name'), 'login');
@@ -45,6 +47,16 @@ class Application_Form_UserAdd extends Zend_Form {
                 ->addValidator('NotEmpty')
                 ->getValidator('NotEmpty')
                 ->setMessage('User_Auth::Password is empty', 'isEmpty');
+
+        $this->addElement('password', 'password_again');
+        $this->password_again->setRequired(true)
+                ->setAttrib('autocomplete', 'off')
+                ->addValidator('NotEmpty', true)
+                ->addValidator(new Ap_Validate_Password)
+                ->getValidator('NotEmpty')
+                ->setMessage('Input is empty', 'isEmpty');
+        
+        $this->addElement('submit', 'add', array('label' => 'Add'));
     }
 
     public function isValid($data) {
