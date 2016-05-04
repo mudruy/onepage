@@ -1,0 +1,16 @@
+{
+    "name": "gordeev/onepage",
+    "description": "Simple project",
+    "type": "Sample",
+    "require": {
+        "zendframework/zendframework1": "1.*",
+        "twbs/bootstrap": "^3.3"
+    },
+    "license": "http://www.gnu.org/copyleft/gpl.html GNU General Public License",
+    "authors": [
+        {
+            "name": "Pavel Gordeev",
+            "email": "mitridat2000@gmail.com"
+        }
+    ]
+}

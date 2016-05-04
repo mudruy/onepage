@@ -1,0 +1,9 @@
+bash vendor/zendframework/zendframework1/bin/zf.sh create project one
+php -S 127.0.0.1:8000
+php composer.phar init
+https://github.com/komola/Bootstrap-Zend-Framework.git
+php composer.phar require twbs/bootstrap
+CREATE USER 'onepage'@'localhost' IDENTIFIED BY 'pass7372irh23if';
+CREATE DATABASE `onepage` CHARACTER SET utf8 COLLATE utf8_general_ci;
+GRANT ALL PRIVILEGES ON onepage.* TO 'onepage'@'localhost';
+FLUSH PRIVILEGES;
