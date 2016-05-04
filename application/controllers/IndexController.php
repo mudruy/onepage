@@ -24,6 +24,25 @@ class IndexController extends Zend_Controller_Action
         }
         $this->view->form = $form;
     }
+    
+    public function editAction()
+    {
+        $table = Ap_Db_Core::getTable('User');
+        if (!$id = $this->getRequest()->getParam('id', false) or 
+                !$userRow = $table->fetchRow($table->select()->where('id = ?', $id))) {
+            $this->_helper->getHelper('FlashMessenger')
+                    ->addMessage(array('danger' => 'Object not found'));
+            return $this->_redirect();
+        }
+        $form = new Application_Form_UserEdit($userRow);
+        if ($this->getRequest()->isPost() and $form->isValid($_POST)) {
+            $form->getObject()->save();
+            $this->_helper->getHelper('FlashMessenger')
+                    ->addMessage(array('success' => 'Saved'));
+            return $this->_redirect();
+        }
+        $this->view->form = $form;
+    }
 
 
 }

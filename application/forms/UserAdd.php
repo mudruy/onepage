@@ -40,7 +40,7 @@ class Application_Form_UserAdd extends Zend_Form {
                 ->getValidator('NotEmpty')
                 ->setMessage('User_Auth::E-mail is empty', 'isEmpty');
 
-        $this->addElement('text', 'password');
+        $this->addElement('password', 'password');
         $this->password->setRequired(true)
                 ->setAttrib('autocomplete', 'off')
                 ->addValidator(new Zend_Validate_StringLength(array('max' => 24, 'min' => 6)))

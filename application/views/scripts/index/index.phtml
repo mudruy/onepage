@@ -8,7 +8,7 @@
 
 <div class="row">
     <?php foreach ($this->users AS $user): ?>
-        <?php echo $user->login; ?> <br />
+        <?php echo $user->login; ?> <a href="<?php echo $this->url(array('action'=>'edit', 'id' => $user->id), 'edit_user', true)?>" >Edit</a> <br />
     <?php endforeach; ?>
 </div><!-- @end .row -->
 <a href="<?php echo $this->url(array('action'=>'add'), 'add_user', true)?>" >Add</a>
