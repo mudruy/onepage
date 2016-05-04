@@ -1,0 +1,29 @@
+test:
+  test_mock_browser_urls:
+    params:
+      mock1:
+        url: http://some.url/
+        params: {a: 1}
+        content: Content for some.url
+        headers: {header: value}
+        cookies: {k1: 1, k2: cookie 2}
+        adapterErrors: {code: 23, text: Error write header}
+      mock2:
+        url: http://freemail.ukr.net/
+        userAgent: correct_useragent
+        content: "[Freemail] internet mail service."
+        adapterErrors: {code: 23, text: Error write content}
+      mock3:
+        url: http://statuscodecheck.com/
+        content: Content
+        statusCode: 11
+        charset: utf-8
+      mock4:
+        url: http://headers.url/
+        content: Content for cookies and headers
+        headers: {header: value}
+        cookies: {k1: 1, k2: cookie 2} 
+      mock10:
+        url: http://method.check.com/
+        content: OK
+        method: POST
