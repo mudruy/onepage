@@ -24,8 +24,6 @@ class Application_Form_UserEdit extends Zend_Form {
                 ->setMessage('User_Auth::Name is empty', 'isEmpty');
 
 
-
-
         $email_validator = new Zend_Validate_Db_NoRecordExists($this->getObject()->getTable()->info('name'), 'login');
         $email_validator->setMessage('User_Auth::Е-mail is used', Zend_Validate_Db_Abstract::ERROR_RECORD_FOUND);
 
